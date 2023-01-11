@@ -16,7 +16,7 @@ namespace Module7.Products
 
         public virtual void ShowInfo()
         {
-            Console.WriteLine();
+            Console.WriteLine($"Информация о товаре:\nназвание: {Name}\nартикул: {Article}\nописание: {Description}\nкатегория: {Category}\nцена: {Price}");
         }
     }
 }

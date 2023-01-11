@@ -26,7 +26,7 @@ namespace Module7.Companies
         }      
         public void ShowInfo()
         {
-            Console.WriteLine($"Наименование организации: {Name}\nАдрес: {Address}\nНомер телефона: {PhoneNumber}\nEmail: {Email}\nОписание: {Description}\nСайт: {Site}");
+            Console.WriteLine($"Информация об организации:\nнаименование: {Name}\nадрес: {Address}\nномер телефона: {PhoneNumber}\nEmail: {Email}\nописание: {Description}\nсайт: {Site}");
         }
     }
 }
