@@ -6,13 +6,23 @@ using System.Threading.Tasks;
 
 namespace Module7.Products
 {
-    internal abstract class Product<TArticle> : IShowInfo
+    internal abstract class Product<TArticle, TManufacturer> : IShowInfo
     {
         public TArticle? Article { get; }
         public virtual string? Name { get;}
         public virtual string? Description { get;}
         public virtual string? Category { get;}
         public virtual decimal Price { get;}
+        public TManufacturer? Manufacturer { get;}
+        public Product(TArticle article, string name, string description, string category, decimal price, TManufacturer? manufacturer)
+        {
+            Article = article;
+            Name = name;
+            Description = description;
+            Category = category;
+            Price = price;
+            Manufacturer = manufacturer;
+        }
 
         public virtual void ShowInfo()
         {
