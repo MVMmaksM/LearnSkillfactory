@@ -8,6 +8,6 @@ namespace Module7
 {
     internal interface IShowInfo
     {
-        void ShowInfo();
+        string ShowInfo();
     }
 }

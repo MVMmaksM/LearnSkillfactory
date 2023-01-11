@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Module7.Manufacturers;
 
 namespace Module7.Products
 {
@@ -24,9 +25,9 @@ namespace Module7.Products
             Manufacturer = manufacturer;
         }
 
-        public virtual void ShowInfo()
+        public virtual string ShowInfo()
         {
-            Console.WriteLine($"Информация о товаре:\nназвание: {Name}\nартикул: {Article}\nописание: {Description}\nкатегория: {Category}\nцена: {Price}");
+            return $"Информация о товаре:\nназвание: {Name}\nартикул: {Article}\nописание: {Description}\nкатегория: {Category}\nцена: {Price}";
         }
     }
 }

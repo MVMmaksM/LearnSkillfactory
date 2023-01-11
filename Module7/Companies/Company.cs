@@ -24,9 +24,9 @@ namespace Module7.Companies
             Email = email;
             Site = site;
         }      
-        public virtual void ShowInfo()
+        public virtual string ShowInfo()
         {
-            Console.WriteLine($"Информация об организации:\nнаименование: {Name}\nадрес: {Address}\nномер телефона: {PhoneNumber}\nEmail: {Email}\nописание: {Description}\nсайт: {Site}");
+            return $"Информация об организации:\nнаименование: {Name}\nадрес: {Address}\nномер телефона: {PhoneNumber}\nEmail: {Email}\nописание: {Description}\nсайт: {Site}";
         }
     }
 }
