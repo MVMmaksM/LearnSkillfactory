@@ -1,7 +1,7 @@
 ﻿namespace Module5
 {
     internal class Program
-    {
+    {      
         public static string[] CreateArrayPets(int amountPets)
         {
             string[] arrayPets = new string[amountPets];
@@ -168,7 +168,10 @@
 
         static void Main(string[] args)
         {
-            ShowUser(GetUser());
+            //ShowUser(GetUser());
+
+            Console.WriteLine(decimal.MaxValue);
+            Console.WriteLine(long.MaxValue);
         }
     }
 }
