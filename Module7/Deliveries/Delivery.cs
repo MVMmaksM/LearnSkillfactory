@@ -9,9 +9,9 @@ namespace Module7.Deliveries
 {
     internal abstract class Delivery<TCompany> where TCompany: Company
     {
-        public string Name { get; set; }
-        public TCompany Company { get; set; }
-        public string Description { get; set; }
+        public string? Name { get; set; }
+        public TCompany? Company { get; set; }
+        public string? Description { get; set; }
         public abstract void ShowInfoDelivery();
     }
 }

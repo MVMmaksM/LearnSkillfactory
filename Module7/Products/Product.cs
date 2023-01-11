@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Module7.Products
 {
-    internal abstract class Product<TArticle, TManufacturer> : IShowInfo
+    internal abstract class Product<TArticle, TManufacturer> where TManufacturer : Manufacturer, IShowInfo
     {
         public TArticle? Article { get; }
         public virtual string? Name { get;}

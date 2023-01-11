@@ -15,7 +15,7 @@ namespace Module7.Companies
         public virtual string? Email { get; }
         public virtual string? Site { get; set; }
 
-        public Company(string name, string address, string phoneNumber, string description = "Не указано", string email = "Не указан", string site = "Не указан")
+        protected Company(string name, string address, string phoneNumber, string description = "Не указано", string email = "Не указан", string site = "Не указан")
         {
             Name = name;
             Address = address;
@@ -24,7 +24,7 @@ namespace Module7.Companies
             Email = email;
             Site = site;
         }      
-        public void ShowInfo()
+        public virtual void ShowInfo()
         {
             Console.WriteLine($"Информация об организации:\nнаименование: {Name}\nадрес: {Address}\nномер телефона: {PhoneNumber}\nEmail: {Email}\nописание: {Description}\nсайт: {Site}");
         }
