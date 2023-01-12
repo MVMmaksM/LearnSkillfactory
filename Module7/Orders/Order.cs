@@ -22,7 +22,7 @@ namespace Module7.Orders
             DateCreate = DateTime.Now;
             Delivery = delivery;
             _products = products;
-        }
+        }        
 
         public TProduct this[int index]
         { 
