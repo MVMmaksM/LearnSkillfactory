@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Module10
 {
-    internal interface IWriter
+    internal interface ILogger
     {
-        public int MyProperty { get; set; }
-        void Write() => Console.WriteLine("Hello");
+        void Info(string message);
+        void Warn(string message);
+        void Error(string message);
     }
 }
