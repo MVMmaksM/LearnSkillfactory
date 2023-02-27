@@ -8,14 +8,12 @@ namespace Module13
 {
     internal class Contact
     {
-        public Contact(string name, long phoneNumber, string email)
-        {
-            Name = name;
+        public Contact(long phoneNumber, string email)
+        {          
             PhoneNumber = phoneNumber;
             Email = email;
         }
-
-        public string Name { get; set; }
+        
         public long PhoneNumber { get; set; }
         public string Email { get; set; }
     }

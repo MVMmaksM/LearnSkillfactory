@@ -1,107 +1,43 @@
 ﻿using System;
 using System.Collections;
 using System.Text;
+using System.Xml;
 
 namespace Module13
 {
     internal class Program
     {
+        private static Dictionary<string, Contact> PhoneBook = new Dictionary<string, Contact>()
+        {
+            ["Макс"] = new Contact(89003795411, "vaganov.maksim@mail.ru"),
+            ["Иван"] = new Contact(89005548988, "vaganov.maksim@mail.ru"),
+        };
         static void Main(string[] args)
         {
-            while (true)
+            Console.WriteLine("Список контаков:");
+            ShowContacts();
+
+            var isAddContact = PhoneBook.TryAdd("Дмитрий", new Contact(89366655545, "@email.ru"));
+            Console.WriteLine($"\nКонтакт добавлен: {isAddContact}");
+            ShowContacts();
+
+            if (PhoneBook.TryGetValue("Дмитрий", out Contact? contact))
             {
-                Console.WriteLine("Введите текст:");
-                var text = Console.ReadLine();
+                contact.PhoneNumber = 8900000000;
+                Console.WriteLine("Контакт изменен");
+            }
 
-                var sing = new char[] { ' ', '.', ',' };
-                var numbers = new[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-                
-                var chars = text?.ToCharArray();
-               
-                HashSet<char> set = new HashSet<char>(chars);
+            Console.WriteLine("\nСписок с изсененным контактом");
+            ShowContacts();
 
-                bool isNumbers = set.Overlaps(numbers);
-                Console.WriteLine($"Коллекция содержит цифры: {isNumbers}");
-
-                set.ExceptWith(sing);
-                Console.WriteLine($"Длина коллекции: {set.Count}\n");
-            }                    
         }
 
-        public static List<string> GetMissing(List<string> month, ArrayList missing)
+        public static void ShowContacts() 
         {
-            var result = new List<string>();
-
-            foreach (var miss in missing)
+            foreach (var contact in PhoneBook)
             {
-                if ((miss is string) && (!month.Contains(miss)))
-                {
-                    result.Add((string)miss);
-                }
+                Console.WriteLine($"Имя: {contact.Key} телефон: {contact.Value.PhoneNumber} Email: {contact.Value.Email}");
             }
-
-            foreach (var item in result)
-            {
-                missing.Remove(item);
-            }
-
-            month.AddRange(result);
-
-            return month;
-        }
-        public static void AddContact(List<Contact> contacts, Contact contact)
-        {
-            bool isExist = false;
-
-            foreach (var con in contacts)
-            {
-                if (con.Name == contact.Name)
-                {
-                    isExist = true;
-                }
-            }
-
-            if (!isExist)
-            {
-                contacts.Add(contact);
-            }
-        }
-
-        static bool isSortArray(int[] array)
-        {
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                if (array[i + 1] <= array[i])
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        public static ArrayList NewArrayList(ArrayList input)
-        {
-            int sum = default(int);
-            StringBuilder text = new StringBuilder();
-            var outputArrList = new ArrayList();
-
-            foreach (var value in input)
-            {
-                if (value is int)
-                {
-                    sum += (int)value;
-                }
-                else if (value is string)
-                {
-                    text.Append(value);
-                }
-            }
-
-            outputArrList.Add(sum);
-            outputArrList.Add(text);
-
-            return outputArrList;
         }
     }
 }
