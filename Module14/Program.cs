@@ -6,23 +6,46 @@ namespace Module14
     {
         static void Main(string[] args)
         {
-            List<Student> students = new List<Student>
+            //  создаём пустой список с типом данных Contact
+            var phoneBook = new List<Contact>
             {
-                new Student {Name="Андрей", Age=23, Languages = new List<string> {"английский", "немецкий" }},
-                new Student {Name="Сергей", Age=27, Languages = new List<string> {"английский", "французский" }},
-                new Student {Name="Дмитрий", Age=29, Languages = new List<string> {"английский", "испанский" }},
-                new Student {Name="Василий", Age=24, Languages = new List<string> {"испанский", "немецкий" }}
+                // добавляем контакты
+                new Contact("Игорь", "Николаев", 79990000001, "igor@example.com"),
+                new Contact("Сергей", "Довлатов", 79990000010, "serge@example.com"),
+                new Contact("Анатолий", "Карпов", 79990000011, "anatoly@example.com"),
+                new Contact("Валерий", "Леонтьев", 79990000012, "valera@example.com"),
+                new Contact("Сергей", "Брин", 799900000013, "serg@example.com"),
+                new Contact("Иннокентий", "Смоктуновский", 799900000013, "innokentii@example.com")
             };
 
-            var selectStudents = students.SelectMany(
-                s => s.Languages, (s, l) => new { Student = s, Lang = l });
-
-            foreach (var s in selectStudents)
+            while (true)
             {
-                Console.WriteLine($"Имя студента: {s.Student.Name}");
-                Console.WriteLine($"Язык студента: {s.Lang}\n");
-            }
+                // Читаем введенный с консоли символ
+                var input = Console.ReadKey().KeyChar;
 
-        }                
+                // проверяем, число ли это
+                var parsed = Int32.TryParse(input.ToString(), out int pageNumber);
+
+                // если не соответствует критериям - показываем ошибку
+                if (!parsed || pageNumber < 1 || pageNumber > 3)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Страницы не существует");
+                }
+                // если соответствует - запускаем вывод
+                else
+                {
+                    // пропускаем нужное количество элементов и берем 2 для показа на странице
+                    var pageContent = phoneBook.Skip((pageNumber - 1) * 2).Take(2).OrderBy(contact => contact.Name).ThenBy(contact => contact.LastName);
+                    Console.WriteLine();
+
+                    // выводим результат
+                    foreach (var entry in pageContent)
+                        Console.WriteLine(entry.Name + " " + entry.LastName + ": " + entry.PhoneNumber);
+
+                    Console.WriteLine();
+                }
+            }
+        }
     }
 }
