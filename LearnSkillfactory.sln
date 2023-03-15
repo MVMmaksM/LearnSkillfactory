@@ -19,11 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module12", "Module12\Module
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module13", "Module13\Module13.csproj", "{031EF60B-BD3A-48E0-B036-AE1FE6C39ED2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task13.6.1", "Task13.6.1\Task13.6.1.csproj", "{AC1CB3D4-CBD4-4FC3-A830-9992BB70B62A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task13.6.1", "Task13.6.1\Task13.6.1.csproj", "{AC1CB3D4-CBD4-4FC3-A830-9992BB70B62A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task13.6.2", "Task13.6.2\Task13.6.2.csproj", "{100682BF-09E9-4984-82FD-C667864F7704}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task13.6.2", "Task13.6.2\Task13.6.2.csproj", "{100682BF-09E9-4984-82FD-C667864F7704}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module14", "Module14\Module14.csproj", "{EE20B538-76F0-4CF5-826A-55E5107502DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module14", "Module14\Module14.csproj", "{EE20B538-76F0-4CF5-826A-55E5107502DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module15", "Module15\Module15.csproj", "{54A67EAF-B126-488B-BE19-1C3BDC8CCE0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{EE20B538-76F0-4CF5-826A-55E5107502DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE20B538-76F0-4CF5-826A-55E5107502DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE20B538-76F0-4CF5-826A-55E5107502DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54A67EAF-B126-488B-BE19-1C3BDC8CCE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A67EAF-B126-488B-BE19-1C3BDC8CCE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A67EAF-B126-488B-BE19-1C3BDC8CCE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A67EAF-B126-488B-BE19-1C3BDC8CCE0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
