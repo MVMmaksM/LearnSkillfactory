@@ -11,13 +11,14 @@
                 new Contact() { Name = "Иван", Phone = 79999675334 },
                 new Contact() { Name = "Игорь", Phone = 8884994 },
                 new Contact() { Name = "Анна", Phone = 665565656 },
+                new Contact() { Name = "Василий", Phone = 3434 },
                 new Contact() { Name = "Василий", Phone = 3434 }
             };
 
             Console.WriteLine(IsCorrectPhoneNumber(contacts));
         }
 
-        static int IsCorrectPhoneNumber(List<Contact> contacts) 
+        static int IsCorrectPhoneNumber(List<Contact> contacts)
         {
             var result = (from contact in contacts
                           let phoneNumber = contact.Phone.ToString()
