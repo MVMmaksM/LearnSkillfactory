@@ -4,20 +4,42 @@
     {
         static void Main(string[] args)
         {
-            var contacts = new List<Contact>()
+            var phoneBook = new List<Contact>
             {
-                new Contact() { Name = "Андрей", Phone = 79994500508 },
-                new Contact() { Name = "Сергей", Phone = 799990455 },
-                new Contact() { Name = "Иван", Phone = 79999675334 },
-                new Contact() { Name = "Игорь", Phone = 8884994 },
-                new Contact() { Name = "Анна", Phone = 665565656 },
-                new Contact() { Name = "Василий", Phone = 3434 },
-                new Contact() { Name = "Василий", Phone = 3434 }
+                // добавляем контакты
+                new Contact("Игорь", 79990000001, "igor@example.com"),
+                new Contact("Сергей", 79990000010, "serge@example.com"),
+                new Contact("Анатолий", 79990000011, "anatoly@example.com"),
+                new Contact("Валерий", 79990000012, "valera@example.com"),
+                new Contact("Сергей", 799900000013, "serg@gmail.com"),
+                new Contact("Иннокентий", 799900000013, "innokentii@example.com")
             };
 
-            Console.WriteLine(IsCorrectPhoneNumber(contacts));
-        }
+            var groupContact = phoneBook.GroupBy(contact => contact?.Email?.Split("@").Last());
 
+            var result = phoneBook[0]?.Email?.Split("@").Last();
+
+            Console.WriteLine(result);
+
+
+            //foreach (var group in groupContact)
+            //{
+            //    Console.WriteLine($"Группа: {group.Key}");
+
+            //    foreach (var contact in group)
+            //    {
+            //        Console.WriteLine("Контакты группы:");
+            //        Console.WriteLine($"Имя: {contact.Name}");
+            //        Console.WriteLine($"Телефон: {contact.Phone}");
+            //        Console.WriteLine($"Email: {contact.Email}");
+            //        Console.WriteLine();
+            //    }
+            //}
+        }
+        static double Average(int[] numbers)
+        {
+            return numbers.Sum() / numbers.Length;
+        }
         static int IsCorrectPhoneNumber(List<Contact> contacts)
         {
             var result = (from contact in contacts

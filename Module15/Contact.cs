@@ -10,5 +10,13 @@ namespace Module15
     {
         public string? Name { get; set; }
         public long Phone { get; set; }
+        public string? Email { get; set; }
+
+        public Contact(string name, long number, string email)
+        {
+            Name = name;
+            Phone = number;
+            Email = email;
+        }
     }
 }
