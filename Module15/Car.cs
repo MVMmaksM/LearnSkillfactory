@@ -8,13 +8,17 @@ namespace Module15
 {
     internal class Car
     {
-        public string Manufacturer { get; set; }
-        public string CountryCode { get; set; }
+        public string? Model { get; set; }
+        public string? Manufacturer { get; set; }     
 
-        public Car(string manufacturer, string countryCode)
+        public Car(string model, string manufacturer)
         {
-            Manufacturer = manufacturer;
-            CountryCode = countryCode;
+            Model = model;
+            Manufacturer = manufacturer;            
+        }
+        public Car()
+        {
+            
         }
     }
 }
