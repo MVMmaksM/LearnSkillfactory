@@ -15,7 +15,19 @@ namespace Module18
         {
             this.youtubeClient = youtubeClient;
         }
-        public void GetInfo(string urlVideo) => youtubeClient?.Videos.GetAsync(urlVideo);
-        public void LoadVideo(string urlVideo, string outputFilePath) => youtubeClient?.Videos.DownloadAsync(urlVideo, outputFilePath, builder => builder.SetPreset(ConversionPreset.UltraFast));
+        public void GetInfo(string urlVideo)
+        {
+            var videoInfo = youtubeClient?.Videos.GetAsync(urlVideo);
+            Console.WriteLine($"Название видео: {videoInfo.Value.Result.Title}\n");
+            Console.WriteLine($"Автор видео: {videoInfo.Value.Result.Author}\n");
+            Console.WriteLine($"Описание видео: {videoInfo.Value.Result.Description}\n");
+        }
+
+        public void LoadVideoAsync(string urlVideo, string outputFilePath)
+        {
+            Console.WriteLine("Скачивание видео");
+            youtubeClient?.Videos.DownloadAsync(urlVideo, outputFilePath);
+            Console.WriteLine("Скачивание завершено");
+        }
     }
 }

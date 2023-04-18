@@ -9,6 +9,6 @@ namespace Module18
     internal interface ICommand
     {
         void GetInfo(string urlVideo);
-        void LoadVideo(string urlVideo, string outputFilePath);
+        void LoadVideoAsync(string urlVideo, string outputFilePath);
     }
 }
