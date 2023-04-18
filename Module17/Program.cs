@@ -20,9 +20,13 @@
             //orcMosnter.Start();
             //orcMosnter.Attack();
 
-            var client = new Client();
-            client.Request(new Target());
-            client.Request(new Adapter());
+            //var client = new Client();
+            //client.Request(new Target());
+            //client.Request(new Adapter());
+
+            var imgDraver = new ImageDirver();
+            imgDraver.Print(new PaperPrinter());
+            imgDraver.Print(new CanvasPrinterAdapter());
         }
     }
 }
