@@ -9,7 +9,7 @@ namespace Task17._6._4
     internal interface IAccount
     {
         // тип учетной записи
-        string Type { get; set; }
+        string? Type { get; set; }
 
         // баланс учетной записи
         public double Balance { get; set; }
