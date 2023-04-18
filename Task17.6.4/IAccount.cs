@@ -15,6 +15,6 @@ namespace Task17._6._4
         public double Balance { get; set; }
         
         // процентная ставка
-        public double Interes { get; set; }
+        public double Interest { get; set; }
     }
 }

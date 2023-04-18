@@ -10,6 +10,6 @@ namespace Task17._6._4
     {
         public string? Type { get; set; }
         public double Balance { get; set; }
-        public double Interes { get; set; }
+        public double Interest { get; set; }
     }
 }
