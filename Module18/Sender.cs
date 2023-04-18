@@ -10,7 +10,7 @@ namespace Module18
     {
         ICommand command;       
         public void SetCommand(ICommand command) => this.command = command;
-        public void LoadVideo(string urlVideo, string outputFilePath) => command.LoadVideoAsync(urlVideo, outputFilePath);
+        public async Task LoadVideo(string urlVideo, string outputFilePath) => await command.LoadVideoAsync(urlVideo, outputFilePath);
         public void GetInfo(string urlVideo)=> command.GetInfo(urlVideo);
     }
 }

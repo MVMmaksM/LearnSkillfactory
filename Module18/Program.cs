@@ -2,9 +2,9 @@
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            string outputFilePath = $"{Environment.CurrentDirectory}\\video.mp4";
+            string outputFilePath = $"{Environment.CurrentDirectory}";
 
             Console.WriteLine("Введите url:");
             var urlVideo = Console.ReadLine();
@@ -18,7 +18,7 @@
                 sender.SetCommand(command);
 
                 sender.GetInfo(urlVideo);
-                sender.LoadVideo(urlVideo, outputFilePath);                
+                await sender.LoadVideo(urlVideo, outputFilePath);                
             }
             catch (Exception ex)
             {

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using YoutubeExplode;
 using YoutubeExplode.Converter;
+using YoutubeExplode.Videos.Streams;
 
 namespace Module18
 {
@@ -23,10 +24,14 @@ namespace Module18
             Console.WriteLine($"Описание видео: {videoInfo.Value.Result.Description}\n");
         }
 
-        public void LoadVideoAsync(string urlVideo, string outputFilePath)
+        public async Task LoadVideoAsync(string urlVideo, string outputFilePath)
         {
+            var videoInfo = youtubeClient.Videos.GetAsync(urlVideo);
+            var streamManifest = youtubeClient.Videos.Streams.GetManifestAsync(videoInfo.Result.Id);
+            var streamInfo = streamManifest.Result.GetMuxedStreams().GetWithHighestVideoQuality();
+
             Console.WriteLine("Скачивание видео");
-            youtubeClient?.Videos.DownloadAsync(urlVideo, outputFilePath);
+            await youtubeClient.Videos.Streams.DownloadAsync(streamInfo, $"{outputFilePath}/{videoInfo.Result.Title}.{streamInfo.Container}");
             Console.WriteLine("Скачивание завершено");
         }
     }
